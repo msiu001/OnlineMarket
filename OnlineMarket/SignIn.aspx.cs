@@ -51,9 +51,23 @@ namespace OnlineMarket
                         Response.Cookies["UNAME"].Expires = DateTime.Now.AddDays(-1);
                         Response.Cookies["PASS"].Expires = DateTime.Now.AddDays(-1);
                     }
+                    string Utype;
+                    Utype = dt.Rows[0][5].ToString().Trim();
 
-                    Session["USERNAMEID"] = UsernameID.Text;
-                    Response.Redirect("~/UserHome.aspx");
+                    if(Utype == "U")
+                    {
+                        Session["USERNAMEID"] = UsernameID.Text;
+                        Response.Redirect("~/UserHome.aspx");
+                    }
+                    if(Utype == "A")
+                    {
+                        Session["USERNAMEID"] = UsernameID.Text;
+                        Response.Redirect("~/AdminHome.aspx");
+                    }
+                  
+
+
+                   
                 }
                 else
                 {

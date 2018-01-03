@@ -13,5 +13,11 @@ namespace OnlineMarket
         {
 
         }
+
+        protected void btAdminLogOut_Click(object sender, EventArgs e)
+        {
+            Session["USERNAMEID"] = null;
+            Response.Redirect("~/Index.aspx");
+        }
     }
 }
