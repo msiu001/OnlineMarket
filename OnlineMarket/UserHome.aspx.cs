@@ -14,6 +14,7 @@ namespace OnlineMarket
             if(Session["USERNAMEID"] != null)
             {
                 lblSuccessSignIn.Text = "Login Successfully, Welcome " + Session["USERNAMEID"].ToString()+ "";
+                SignedInUser.Text = "Hi, " + Session["USERNAMEID"].ToString();
             }
             else
             {

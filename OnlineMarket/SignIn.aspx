@@ -105,6 +105,12 @@
                     <div class="form-group">
                         <div class="col-md-2"></div>
                         <div class="col-md-6">
+                            <asp:LinkButton ID="lbForgotPass" runat="server" PostBackUrl="~/ForgotPassword.aspx" CausesValidation="false">Forgot Password !</asp:LinkButton>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6">
                             <asp:Label ID="lblErrorSignIn" runat="server" CssClass="text-danger"></asp:Label>
                         </div>
                     </div>
@@ -116,8 +122,9 @@
      <!--- Footer  -->
 
         
-
+        
         <footer class="footer-pos">
+            <hr />
             <div class="container">
                 <p class="pull-right"><a href="#">Back to top</a></p>
                 <p>&copy; 2017 Mario Siu &middot; <a href="Index.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>

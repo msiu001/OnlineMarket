@@ -117,8 +117,8 @@
       <!--- Footer  -->
 
         
-
         <footer class="footer-pos">
+        <hr />
             <div class="container">
                 <p class="pull-right"><a href="#">Back to top</a></p>
                 <p>&copy; 2017 Mario Siu &middot; <a href="Index.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#">Products</a></p>

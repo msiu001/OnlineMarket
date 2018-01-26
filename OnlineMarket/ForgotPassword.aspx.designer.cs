@@ -10,7 +10,7 @@
 namespace OnlineMarket {
     
     
-    public partial class UserHome {
+    public partial class ForgotPassword {
         
         /// <summary>
         /// form1 control.
@@ -22,30 +22,48 @@ namespace OnlineMarket {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnSignOut control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSignOut;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// SignedInUser control.
+        /// tbEmailId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SignedInUser;
+        protected global::System.Web.UI.WebControls.TextBox tbEmailId;
         
         /// <summary>
-        /// lblSuccessSignIn control.
+        /// RequiredFieldValidatorEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccessSignIn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
+        
+        /// <summary>
+        /// btPassRec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btPassRec;
+        
+        /// <summary>
+        /// lblPassRec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPassRec;
     }
 }
