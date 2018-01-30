@@ -42,7 +42,7 @@ namespace OnlineMarket
                     String toEmailAddress = dt.Rows[0][3].ToString();
                     String Username = dt.Rows[0][4].ToString();
                     String EmailBody = "Hi " + Username + ", <br/><br/> Click the link below to reset your password.<br/> http://localhost:55379/RecoverPassword.aspx?Uid=" + myGUID;
-                    MailMessage PassRecMail = new MailMessage("Your email address", toEmailAddress);
+                    MailMessage PassRecMail = new MailMessage("Your Email", toEmailAddress);
                     PassRecMail.Body = EmailBody;
                     PassRecMail.IsBodyHtml = true;
                     PassRecMail.Subject = "Reset Password Request";
@@ -50,7 +50,7 @@ namespace OnlineMarket
                     SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
                     SMTP.Credentials = new NetworkCredential()
                     {
-                        UserName = "Your email address",
+                        UserName = "Your Email",
                         Password = "Your Password"
                     };
 
