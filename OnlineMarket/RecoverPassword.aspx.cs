@@ -20,12 +20,12 @@ namespace OnlineMarket
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            using(SqlConnection con = new SqlConnection(CS))
+            using (SqlConnection con = new SqlConnection(CS))
             {
                 GUIDvalue = Request.QueryString["Uid"];
-                if(GUIDvalue!= null)
+                if (GUIDvalue != null)
                 {
-                    SqlCommand cmd = new SqlCommand("select * from ForgotPassRequests where id='"+ GUIDvalue +"'", con);
+                    SqlCommand cmd = new SqlCommand("select * from ForgotPassRequests where id='" + GUIDvalue + "'", con);
                     con.Open();
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -47,7 +47,7 @@ namespace OnlineMarket
 
             if (!IsPostBack)
             {
-                if(dt.Rows.Count != 0)
+                if (dt.Rows.Count != 0)
                 {
                     tbNewPass.Visible = true;
                     tbConfirmPass.Visible = true;
@@ -66,7 +66,7 @@ namespace OnlineMarket
 
         protected void btRecPass_Click(object sender, EventArgs e)
         {
-                      
+
             if (tbNewPass.Text != "" && tbConfirmPass.Text != "" && tbNewPass.Text == tbConfirmPass.Text)
             {
                 using (SqlConnection con = new SqlConnection(CS))
@@ -79,12 +79,12 @@ namespace OnlineMarket
                     Response.Redirect("~/SignIn.aspx");
                 }
             }
-            else if (tbNewPass.Text == "" )
+            else if (tbNewPass.Text == "")
             {
                 lbCompareValidator1.Text = "Enter New Password";
                 lbCompareValidator1.ForeColor = Color.Red;
             }
-            else if(tbNewPass.Text != tbConfirmPass.Text)
+            else if (tbNewPass.Text != tbConfirmPass.Text)
             {
                 {
                     lbCompareValidator2.Text = "Passwords do not match!";
