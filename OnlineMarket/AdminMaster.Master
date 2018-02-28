@@ -52,11 +52,11 @@
                                     <li><a href="AddBrand.aspx">Add Brand</a></li>
                                     <li><a href="AddCategory.aspx">Add Category</a></li>
                                     <li><a href="AddSubCategory.aspx">Add SubCategory</a></li>
-                                    <li><a href="AddSubCategory.aspx">Add Gender</a></li>
+                                    <li><a href="AddGender.aspx">Add Gender</a></li>
+                                    <li><a href="AddSize.aspx">Add Size</a></li>
                                 </ul>
                             </li>
                                 <asp:Button ID="btAdminLogOut" runat="server" cssClass="btn btn-default navbar-btn" Text="Log Out" OnClick="btAdminLogOut_Click" />
-                            </li>
                         </ul>
                     </div>
                 </div>

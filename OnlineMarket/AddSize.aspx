@@ -45,5 +45,44 @@
                     <asp:Button ID="btnAdd" runat="server" Text="Add Size" CssClass="btn btn-default" OnClick="btnAdd_Click"/>
                 </div>
             </div>
+                 <h1>Size</h1>
+        <hr />
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">All Size</div>
+            <asp:Repeater ID="rptrSize" runat="server">
+                <HeaderTemplate>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Size</th>
+                            <th>Brand</th>
+                            <th>Category</th>
+                            <th>Sub Category</th>
+                            <th>Gender</th>
+                            <th>Edit</th>
+                            </tr>
+                        </thead>
+                <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <th><%# Eval("SizeID") %></th>
+                        <td><%# Eval("SizeName") %></td>
+                        <td><%# Eval("Name") %></td>
+                        <td><%# Eval("CatName") %></td>
+                        <td><%# Eval("SubCatName") %></td>
+                        <td><%# Eval("GenderName") %></td>
+                        <td>Edit</td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                        </tbody>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
+            <!-- Table -->             
+        </div>
         </div>
 </asp:Content>

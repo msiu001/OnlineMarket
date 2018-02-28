@@ -18,16 +18,36 @@ namespace OnlineMarket
             {
                 BindBrand();
                 BindMainCategory();
-                bindGender();
+                BindGender();
+                BindBrandRptr();
             }
         }
-        
-        private void bindGender()
+
+        private void BindBrandRptr()
         {
             String CS = ConfigurationManager.ConnectionStrings["myConnectionString1"].ConnectionString;
             using (SqlConnection con = new SqlConnection(CS))
             {
-                SqlCommand cmd = new SqlCommand("select * from tblgender", con);
+                using (SqlCommand cmd = new SqlCommand("select A.*,B.*,C.*,D.*,E.* from tblSizes A inner join tblCategories B on B.CatID=A.CategoryID inner join tblBrands C on C.BrandID=A.BrandID inner join tblSubCategories D on D.SubCatID=A.SubCategoryID inner join tblGender E on E.GenderID=A.GenderID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtBrands = new DataTable();
+                        sda.Fill(dtBrands);
+                        rptrSize.DataSource = dtBrands;
+                        rptrSize.DataBind();
+                    }
+
+                }
+            }
+        }
+
+        private void BindGender()
+        {
+            String CS = ConfigurationManager.ConnectionStrings["myConnectionString1"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlCommand cmd = new SqlCommand("select * from tblGender", con);
                 con.Open();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -36,8 +56,8 @@ namespace OnlineMarket
                 if (dt.Rows.Count != 0)
                 {
                     ddlGender.DataSource = dt;
-                    ddlGender.DataTextField = "Gendername";
-                    ddlGender.DataValueField = "genderid";
+                    ddlGender.DataTextField = "GenderName";
+                    ddlGender.DataValueField = "GenderID";
                     ddlGender.DataBind();
                     ddlGender.Items.Insert(0, new ListItem("-Select-", "0"));
                 }
@@ -105,6 +125,7 @@ namespace OnlineMarket
                 ddlGender.ClearSelection();
                 ddlGender.Items.FindByValue("0").Selected = true;
             }
+            BindBrandRptr();
         }
 
         protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)

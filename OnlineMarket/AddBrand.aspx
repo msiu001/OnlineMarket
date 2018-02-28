@@ -23,24 +23,31 @@
         <div class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading">All Brands</div>
-
-            <!-- Table -->
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Brand</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
+            <asp:Repeater ID="rptrBrands" runat="server">
+                <HeaderTemplate>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Brand</th>
+                            <th>Edit</th>
+                            </tr>
+                        </thead>
                 <tbody>
+                </HeaderTemplate>
+                <ItemTemplate>
                     <tr>
-                        <th>1</th>
-                        <td>Adidas</td>
+                        <th><%# Eval("BrandID") %></th>
+                        <td><%# Eval("Name") %></td>
                         <td>Edit</td>
                     </tr>
-                </tbody>
-            </table>
+                </ItemTemplate>
+                <FooterTemplate>
+                        </tbody>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
+            <!-- Table -->             
         </div>
     </div>
 </asp:Content>

@@ -17,6 +17,25 @@ namespace OnlineMarket
             if (!IsPostBack)
             {
                 BindMainCategory();
+                BindBrandsRptr();
+            }
+        }
+
+        private void BindBrandsRptr()
+        {
+            String CS = ConfigurationManager.ConnectionStrings["myConnectionString1"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("Select A.*, B.* from tblSubCategories A inner join tblCategories B on B.CatID=A.MainCatID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtCategories = new DataTable();
+                        sda.Fill(dtCategories);
+                        rptrSubCategory.DataSource = dtCategories;
+                        rptrSubCategory.DataBind();
+                    }
+                }
             }
         }
 
@@ -54,6 +73,7 @@ namespace OnlineMarket
                 ddlCategory.ClearSelection();
                 ddlCategory.Items.FindByValue("0").Selected = true;
             }
+            BindBrandsRptr();
         }
     }
 }
