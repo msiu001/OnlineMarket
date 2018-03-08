@@ -184,13 +184,13 @@ namespace OnlineMarket {
         protected global::System.Web.UI.WebControls.Label Label19;
         
         /// <summary>
-        /// ddGender control.
+        /// ddlGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
         
         /// <summary>
         /// RequiredFieldValidator14 control.
@@ -211,13 +211,13 @@ namespace OnlineMarket {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// txtDynamicSize control.
+        /// cblSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDynamicSize;
+        protected global::System.Web.UI.WebControls.CheckBoxList cblSize;
         
         /// <summary>
         /// Label8 control.
