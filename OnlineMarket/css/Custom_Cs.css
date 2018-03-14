@@ -39,6 +39,7 @@ body {
     line-height: 15px;
     text-transform: uppercase;
     font-family: sans-serif;
+    text-align: center;
 }
 
 
@@ -46,13 +47,17 @@ body {
     font-size: 13px;
     line-height: 17px;
     font-family: sans-serif;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .proPrice {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 17px;
     font-family: sans-serif;
     font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .proOgPrice {
@@ -61,6 +66,7 @@ body {
     font-weight: 400;
     text-decoration: line-through;
     color: gray;
+    text-align: center;
 }
 
 .proPriceDiscount {
@@ -68,6 +74,7 @@ body {
     font-family: sans-serif;
     font-weight: 400;
     color: deeppink;
+    text-align: center;
 }
 
 /*productview*/
