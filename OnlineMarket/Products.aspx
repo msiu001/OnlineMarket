@@ -3,15 +3,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row" style="padding-top:50px">
-  <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
-      <img src="Images/shirt1.jpg" alt="shirt">
-      <div class="caption">
-        <div class="probrand"><strong>Zara</strong></div>
-        <div class="proName">Men Blue Slim Fit Casual Shirt</div>
-        <div class="proPrice"><span class="proOgPrice">$ 22.50</span>&nbsp &nbsp &nbsp$ 19.99&nbsp &nbsp &nbsp<span class="proPriceDiscount">($ 2.51)</span></div>
-      </div>
+        <asp:Repeater ID="rptrProduts" runat="server">
+            <ItemTemplate>
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="Images/ProductImages/<%#Eval("PID") %>/<%#Eval("ImageName") %><%#Eval("Extension") %>" alt="<%#Eval("ImageName") %>">
+                    <div class="caption">
+                        <div class="probrand"><strong><%#Eval("BrandName") %></strong></div>
+                        <div class="proName"><%#Eval("PName") %></div>
+                        <div class="proPrice"><span class="proOgPrice"><%#Eval("PPrice") %></span>&nbsp<%#Eval("PSelPrice") %>&nbsp<span class="proPriceDiscount">($ <%#Eval("DiscAmount") %> Off)</span></div>
+                    </div>
+                </div>
+            </div>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
-  </div>
-</div>
 </asp:Content>
